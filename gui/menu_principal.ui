@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>950</width><height>700</height></rect></property>
+  <property name="styleSheet">
+   <string>
+    QMainWindow { background-color: #0f0f0f; }
+    #sidebar { background-color: #161616; border-right: 1px solid #252525; min-width: 260px; max-width: 260px; }
+    #btn_nav_prog1, #btn_nav_prog2 {
+        background-color: transparent; border: none; color: #888;
+        text-align: left; padding: 22px 25px; font-size: 10pt; font-family: 'Segoe UI';
+        min-width: 260px; max-width: 260px;
+    }
+    #btn_nav_prog1:hover, #btn_nav_prog2:hover { background-color: #1e1e1e; color: white; }
+    #btn_nav_prog1:checked, #btn_nav_prog2:checked { color: #3d5afe; border-left: 4px solid #3d5afe; background-color: #1e1e1e; }
+    #btn_cerrar {
+        background-color: transparent; border: none; color: #ff5252;
+        text-align: left; padding: 15px 25px; font-size: 10pt; font-family: 'Segoe UI';
+        font-weight: bold; min-width: 260px; max-width: 260px; margin-bottom: 10px;
+    }
+    #btn_cerrar:hover { background-color: #331515; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="hLayout">
+    <property name="spacing"><number>0</number></property>
+    <property name="margin"><number>0</number></property>
+    <item>
+     <widget class="QFrame" name="sidebar">
+      <layout class="QVBoxLayout" name="vLayout">
+       <property name="spacing"><number>0</number></property>
+       <property name="margin"><number>0</number></property>
+       <item>
+        <widget class="QLabel" name="title_menu">
+         <property name="text"><string>Proyecto</string></property>
+         <property name="styleSheet"><string>color: white; font-size: 18pt; font-weight: bold; padding: 20px 20px 0px 20px;</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="subtitle_menu">
+         <property name="text"><string>Segundo Parcial</string></property>
+         <property name="styleSheet"><string>color: #aaaaaa; font-size: 11pt; font-weight: normal; padding: 0px 20px 20px 20px;</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nav_prog1">
+         <property name="text"><string>📊 Regresión Lineal</string></property>
+         <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nav_prog2">
+         <property name="text"><string>∫ Integración t</string></property>
+         <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation"><set>Qt::Vertical</set></property>
+         <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_cerrar">
+         <property name="text"><string>✖ CERRAR PROGRAMA</string></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="content_area">
+      <widget class="QWidget" name="page_welcome">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLabel">
+          <property name="text"><string>Bienvenido al Sistema</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+          <property name="styleSheet"><string>font-size: 24pt; color: #333;</string></property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+</ui>

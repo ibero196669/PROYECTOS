@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="styleSheet">
+   <string>
+    QWidget { background-color: #0f0f0f; color: white; font-family: 'Segoe UI'; }
+    QLineEdit { background-color: #1e1e1e; border: 1px solid #333; padding: 10px; border-radius: 8px; color: white; }
+    QPushButton#btn_calcular { background-color: #3d5afe; color: white; font-weight: bold; border-radius: 8px; padding: 12px; }
+    #card { background-color: #161616; border-radius: 15px; border: 1px solid #222; }
+    #btn_volver_int { background-color: transparent; border: 1px solid #444; color: #888; }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- Header -->
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QLabel">
+       <property name="text"><string>Cálculo Integral</string></property>
+       <property name="styleSheet"><string>font-size: 18pt; font-weight: bold;</string></property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hSpacer1">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_volver_int">
+       <property name="text"><string>← VOLVER</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <!-- Spacer arriba -->
+   <item>
+    <spacer name="vSpacerTop">
+     <property name="orientation"><set>Qt::Vertical</set></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+    </spacer>
+   </item>
+   <!-- Formulario centrado -->
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <spacer name="hSpacerLeft">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QFrame" name="card">
+       <layout class="QGridLayout" name="inputLayout">
+        <item row="0" column="0"><widget class="QLabel"><property name="text"><string>Valor X:</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="txt_x"/></item>
+        <item row="1" column="0"><widget class="QLabel"><property name="text"><string>Grados de Libertad:</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="txt_dof"/></item>
+        <item row="2" column="1"><widget class="QPushButton" name="btn_calcular"><property name="text"><string>CALCULAR ÁREA</string></property></widget></item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hSpacerRight">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <!-- Resultado -->
+   <item>
+    <widget class="QLabel" name="lbl_resultado">
+     <property name="text"><string>0.00000</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+     <property name="styleSheet"><string>font-size: 30pt; color: #81c784; font-weight: bold; margin: 20px;</string></property>
+    </widget>
+   </item>
+   <!-- Spacer abajo -->
+   <item>
+    <spacer name="vSpacerBottom">
+     <property name="orientation"><set>Qt::Vertical</set></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+</ui>
