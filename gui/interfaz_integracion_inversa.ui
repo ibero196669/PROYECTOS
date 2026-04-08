@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="styleSheet">
+   <string>
+    QWidget { background-color: #0f0f0f; color: white; font-family: 'Segoe UI'; }
+    QLineEdit { background-color: #1e1e1e; border: 1px solid #333; padding: 10px; border-radius: 8px; color: white; }
+    QPushButton#btn_calcular_inv { background-color: #3d5afe; color: white; font-weight: bold; border-radius: 8px; padding: 12px; }
+    QPushButton#btn_test1, QPushButton#btn_test2, QPushButton#btn_test3 { background-color: #1e1e1e; border: 1px solid #333; color: #aaa; border-radius: 8px; padding: 10px; }
+    QPushButton#btn_test1:hover, QPushButton#btn_test2:hover, QPushButton#btn_test3:hover { border: 1px solid #3d5afe; color: white; }
+    #card { background-color: #161616; border-radius: 15px; border: 1px solid #222; }
+    #btn_volver_inv { background-color: transparent; border: 1px solid #444; color: #888; }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- Header -->
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QLabel">
+       <property name="text"><string>Integración Inversa</string></property>
+       <property name="styleSheet"><string>font-size: 18pt; font-weight: bold;</string></property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hSpacer1">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_volver_inv">
+       <property name="text"><string>← VOLVER</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <!-- Spacer arriba -->
+   <item>
+    <spacer name="vSpacerTop">
+     <property name="orientation"><set>Qt::Vertical</set></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+    </spacer>
+   </item>
+   <!-- Formulario centrado -->
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <spacer name="hSpacerLeft">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QFrame" name="card">
+       <layout class="QGridLayout" name="inputLayout">
+        <item row="0" column="0"><widget class="QLabel"><property name="text"><string>Valor p:</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="txt_p"><property name="placeholderText"><string>Ej: 0.20</string></property></widget></item>
+        <item row="1" column="0"><widget class="QLabel"><property name="text"><string>Grados de Libertad:</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="txt_dof"><property name="placeholderText"><string>Ej: 6</string></property></widget></item>
+        <item row="2" column="1"><widget class="QPushButton" name="btn_calcular_inv"><property name="text"><string>CALCULAR X</string></property></widget></item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hSpacerRight">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <!-- Resultado -->
+   <item>
+    <widget class="QLabel" name="lbl_resultado_inv">
+     <property name="text"><string>—</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+     <property name="styleSheet"><string>font-size: 30pt; color: #81c784; font-weight: bold; margin: 20px;</string></property>
+    </widget>
+   </item>
+   <!-- Casos de prueba -->
+   <item>
+    <layout class="QHBoxLayout" name="testLayout">
+     <item>
+      <spacer><property name="orientation"><set>Qt::Horizontal</set></property></spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_test1">
+       <property name="text"><string>p=0.20  dof=6
+Esperado: 0.55338</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_test2">
+       <property name="text"><string>p=0.45  dof=15
+Esperado: 1.75305</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_test3">
+       <property name="text"><string>p=0.495  dof=4
+Esperado: 4.60409</string></property>
+      </widget>
+     </item>
+     <item>
+      <spacer><property name="orientation"><set>Qt::Horizontal</set></property></spacer>
+     </item>
+    </layout>
+   </item>
+   <!-- Spacer abajo -->
+   <item>
+    <spacer name="vSpacerBottom">
+     <property name="orientation"><set>Qt::Vertical</set></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+</ui>
