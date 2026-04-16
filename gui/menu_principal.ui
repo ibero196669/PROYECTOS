@@ -9,7 +9,7 @@
     #sidebar { background-color: #161616; border-right: 1px solid #252525; min-width: 260px; max-width: 260px; }
     #btn_nav_prog1, #btn_nav_prog2, #btn_nav_prog3, #btn_nav_prog4 {
         background-color: transparent; border: none; color: #888;
-        text-align: left; padding: 22px 25px; font-size: 10pt; font-family: 'Segoe UI';
+        text-align: left; padding: 14px 25px 14px 40px; font-size: 10pt; font-family: 'Segoe UI';
         min-width: 260px; max-width: 260px;
     }
     #btn_nav_prog1:hover, #btn_nav_prog2:hover, #btn_nav_prog3:hover, #btn_nav_prog4:hover { background-color: #1e1e1e; color: white; }
@@ -43,10 +43,30 @@
          <property name="styleSheet"><string>color: #aaaaaa; font-size: 11pt; font-weight: normal; padding: 0px 20px 20px 20px;</string></property>
         </widget>
        </item>
+       <!-- Sección Regresión -->
+       <item>
+        <widget class="QLabel" name="lbl_seccion_reg">
+         <property name="text"><string>REGRESIÓN</string></property>
+         <property name="styleSheet"><string>color: #555; font-size: 8pt; font-weight: bold; padding: 12px 25px 4px 25px; letter-spacing: 1px;</string></property>
+        </widget>
+       </item>
        <item>
         <widget class="QPushButton" name="btn_nav_prog1">
          <property name="text"><string>📊 Regresión Lineal</string></property>
          <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nav_prog4">
+         <property name="text"><string>📈 Regresión Completa</string></property>
+         <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <!-- Sección Integración -->
+       <item>
+        <widget class="QLabel" name="lbl_seccion_int">
+         <property name="text"><string>INTEGRACIÓN</string></property>
+         <property name="styleSheet"><string>color: #555; font-size: 8pt; font-weight: bold; padding: 12px 25px 4px 25px; letter-spacing: 1px;</string></property>
         </widget>
        </item>
        <item>
@@ -58,12 +78,6 @@
        <item>
         <widget class="QPushButton" name="btn_nav_prog3">
          <property name="text"><string>🔍 Integración Inversa</string></property>
-         <property name="checkable"><bool>true</bool></property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_nav_prog4">
-         <property name="text"><string>📈 Regresión Completa</string></property>
          <property name="checkable"><bool>true</bool></property>
         </widget>
        </item>
