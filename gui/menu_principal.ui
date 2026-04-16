@@ -7,13 +7,13 @@
    <string>
     QMainWindow { background-color: #0f0f0f; }
     #sidebar { background-color: #161616; border-right: 1px solid #252525; min-width: 260px; max-width: 260px; }
-    #btn_nav_prog1, #btn_nav_prog2, #btn_nav_prog3 {
+    #btn_nav_prog1, #btn_nav_prog2, #btn_nav_prog3, #btn_nav_prog4 {
         background-color: transparent; border: none; color: #888;
         text-align: left; padding: 22px 25px; font-size: 10pt; font-family: 'Segoe UI';
         min-width: 260px; max-width: 260px;
     }
-    #btn_nav_prog1:hover, #btn_nav_prog2:hover, #btn_nav_prog3:hover { background-color: #1e1e1e; color: white; }
-    #btn_nav_prog1:checked, #btn_nav_prog2:checked, #btn_nav_prog3:checked { color: #3d5afe; border-left: 4px solid #3d5afe; background-color: #1e1e1e; }
+    #btn_nav_prog1:hover, #btn_nav_prog2:hover, #btn_nav_prog3:hover, #btn_nav_prog4:hover { background-color: #1e1e1e; color: white; }
+    #btn_nav_prog1:checked, #btn_nav_prog2:checked, #btn_nav_prog3:checked, #btn_nav_prog4:checked { color: #3d5afe; border-left: 4px solid #3d5afe; background-color: #1e1e1e; }
     #btn_cerrar {
         background-color: transparent; border: none; color: #ff5252;
         text-align: left; padding: 15px 25px; font-size: 10pt; font-family: 'Segoe UI';
@@ -58,6 +58,12 @@
        <item>
         <widget class="QPushButton" name="btn_nav_prog3">
          <property name="text"><string>🔍 Integración Inversa</string></property>
+         <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nav_prog4">
+         <property name="text"><string>📈 Regresión Completa</string></property>
          <property name="checkable"><bool>true</bool></property>
         </widget>
        </item>

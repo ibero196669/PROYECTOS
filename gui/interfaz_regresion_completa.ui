@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="styleSheet">
+   <string>
+    QWidget { background-color: #0f0f0f; color: white; font-family: 'Segoe UI'; }
+    #card { background-color: #161616; border-radius: 12px; border: 1px solid #222; }
+    QPushButton { background-color: #1e1e1e; border-radius: 6px; padding: 10px; border: 1px solid #333; }
+    QPushButton:hover { border-color: #3d5afe; }
+    #btn_volver_reg4 { background-color: transparent; border: 1px solid #444; color: #888; }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- Header -->
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QLabel">
+       <property name="text"><string>Regresión Completa</string></property>
+       <property name="styleSheet"><string>font-size: 18pt; font-weight: bold;</string></property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hSpacer1">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_volver_reg4">
+       <property name="text"><string>← VOLVER</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <!-- Botones caso -->
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <spacer><property name="orientation"><set>Qt::Horizontal</set></property></spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_test1_r4">
+       <property name="text"><string>Test 1</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_test2_r4">
+       <property name="text"><string>Test 2</string></property>
+      </widget>
+     </item>
+     <item>
+      <spacer><property name="orientation"><set>Qt::Horizontal</set></property></spacer>
+     </item>
+    </layout>
+   </item>
+   <!-- Spacer arriba -->
+   <item>
+    <spacer name="vSpacerTop">
+     <property name="orientation"><set>Qt::Vertical</set></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property>
+    </spacer>
+   </item>
+   <!-- Tabla de resultados -->
+   <item>
+    <layout class="QHBoxLayout" name="centroLayout">
+     <item>
+      <spacer name="hSpacerLeft">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QFrame" name="card">
+       <layout class="QGridLayout" name="resultadosLayout">
+        <!-- Encabezados -->
+        <item row="0" column="0"><widget class="QLabel"><property name="text"><string></string></property></widget></item>
+        <item row="0" column="1">
+         <widget class="QLabel"><property name="text"><string>Esperado</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+          <property name="styleSheet"><string>color: #aaa; font-weight: bold; padding: 6px 40px;</string></property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel"><property name="text"><string>Calculado</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+          <property name="styleSheet"><string>color: #aaa; font-weight: bold; padding: 6px 40px;</string></property>
+         </widget>
+        </item>
+        <!-- r -->
+        <item row="1" column="0"><widget class="QLabel"><property name="text"><string>r =</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLabel" name="lbl_r_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="1" column="2"><widget class="QLabel" name="lbl_r_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- r2 -->
+        <item row="2" column="0"><widget class="QLabel"><property name="text"><string>r² =</string></property></widget></item>
+        <item row="2" column="1"><widget class="QLabel" name="lbl_r2_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="2" column="2"><widget class="QLabel" name="lbl_r2_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- tail area -->
+        <item row="3" column="0"><widget class="QLabel"><property name="text"><string>Tail Area =</string></property></widget></item>
+        <item row="3" column="1"><widget class="QLabel" name="lbl_tail_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="3" column="2"><widget class="QLabel" name="lbl_tail_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- b0 -->
+        <item row="4" column="0"><widget class="QLabel"><property name="text"><string>B0 =</string></property></widget></item>
+        <item row="4" column="1"><widget class="QLabel" name="lbl_b0_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="4" column="2"><widget class="QLabel" name="lbl_b0_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- b1 -->
+        <item row="5" column="0"><widget class="QLabel"><property name="text"><string>B1 =</string></property></widget></item>
+        <item row="5" column="1"><widget class="QLabel" name="lbl_b1_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="5" column="2"><widget class="QLabel" name="lbl_b1_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- yk -->
+        <item row="6" column="0"><widget class="QLabel"><property name="text"><string>Yk =</string></property></widget></item>
+        <item row="6" column="1"><widget class="QLabel" name="lbl_yk_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="6" column="2"><widget class="QLabel" name="lbl_yk_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- Range -->
+        <item row="7" column="0"><widget class="QLabel"><property name="text"><string>Range =</string></property></widget></item>
+        <item row="7" column="1"><widget class="QLabel" name="lbl_range_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="7" column="2"><widget class="QLabel" name="lbl_range_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- UPI -->
+        <item row="8" column="0"><widget class="QLabel"><property name="text"><string>UPI (70%) =</string></property></widget></item>
+        <item row="8" column="1"><widget class="QLabel" name="lbl_upi_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="8" column="2"><widget class="QLabel" name="lbl_upi_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+        <!-- LPI -->
+        <item row="9" column="0"><widget class="QLabel"><property name="text"><string>LPI (70%) =</string></property></widget></item>
+        <item row="9" column="1"><widget class="QLabel" name="lbl_lpi_esp"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #3d5afe; font-weight: bold;</string></property></widget></item>
+        <item row="9" column="2"><widget class="QLabel" name="lbl_lpi_calc"><property name="text"><string>-</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color: #81c784; font-weight: bold;</string></property></widget></item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="hSpacerRight">
+       <property name="orientation"><set>Qt::Horizontal</set></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <!-- Spacer abajo -->
+   <item>
+    <spacer name="vSpacerBottom">
+     <property name="orientation"><set>Qt::Vertical</set></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+</ui>

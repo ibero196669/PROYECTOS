@@ -2,11 +2,9 @@ import math
 
 class CalculadoraRegresion:
     def __init__(self, lista_datos):
-        # Ahora recibimos un objeto de tipo ListaLigada
         self.lista = lista_datos
 
     def calcular_parametros(self):
-        # Obtenemos los totales desde la lista ligada
         sum_x, sum_y, sum_x2, sum_y2, sum_xy, n = self.lista.obtener_sumatorias()
 
         if n < 2: return None
@@ -24,12 +22,12 @@ class CalculadoraRegresion:
         r = r_num / r_den
 
         return {
-            "b0": round(b0, 4),
-            "b1": round(b1, 4),
-            "r": round(r, 4),
-            "r2": round(r**2, 4),
+            "b0": b0,
+            "b1": b1,
+            "r": r,
+            "r2": r**2,
             "n": n
         }
 
     def predecir_yk(self, b0, b1, xk):
-        return round(b0 + (b1 * xk), 4)
+        return b0 + (b1 * xk)
