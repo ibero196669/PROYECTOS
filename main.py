@@ -6,7 +6,6 @@ from logica.integracion import CalculadoraSimpson
 from logica.integracion_inversa import CalculadoraInversa
 from logica.regresion_completa import CalculadoraRegresionCompleta
 
-# Valores esperados por caso según el PDF (Programa 1)
 ESPERADOS = {
     1: {"b0": "-22.55",   "b1": "1.7279",   "r": "0.9545", "r2": "0.9111", "yk": "644.429"},
     2: {"b0": "-4.039",   "b1": "0.1681",   "r": "0.9333", "r2": "0.8711", "yk": "60.858"},
@@ -14,14 +13,12 @@ ESPERADOS = {
     4: {"b0": "-4.604",   "b1": "0.140164", "r": "0.948",  "r2": "0.8988", "yk": "49.4994"},
 }
 
-# Valores esperados para integración inversa (Programa 3)
 ESPERADOS_INV = {
     1: {"p": 0.20, "dof": 6,  "x_esperado": 0.55338},
     2: {"p": 0.45, "dof": 15, "x_esperado": 1.75305},
     3: {"p": 0.495, "dof": 4, "x_esperado": 4.60409},
 }
 
-# Valores esperados para regresión completa (Programa 4)
 ESPERADOS_P4 = {
     1: {
         "r": "0.954496574", "r2": "0.91106371",
@@ -185,7 +182,6 @@ class VentanaRegresionCompleta(QtWidgets.QWidget):
         esp = ESPERADOS_P4[num]
 
         if res:
-            # Columna esperado
             self.lbl_r_esp.setText(esp['r'])
             self.lbl_r2_esp.setText(esp['r2'])
             self.lbl_tail_esp.setText(esp['tail_area'])
@@ -196,7 +192,6 @@ class VentanaRegresionCompleta(QtWidgets.QWidget):
             self.lbl_upi_esp.setText(esp['upi'])
             self.lbl_lpi_esp.setText(esp['lpi'])
 
-            # Columna calculado
             self.lbl_r_calc.setText(formatear_igual(res['r'], esp['r']))
             self.lbl_r2_calc.setText(formatear_igual(res['r2'], esp['r2']))
             self.lbl_tail_calc.setText(formatear_igual(res['tail_area'], esp['tail_area']))

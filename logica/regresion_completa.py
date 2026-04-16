@@ -53,31 +53,24 @@ class CalculadoraRegresionCompleta:
         avg_x = sum_x / n
         avg_y = sum_y / n
 
-        # --- Regresión lineal ---
         b1 = (sum_xy - (n * avg_x * avg_y)) / (sum_x2 - (n * (avg_x ** 2)))
         b0 = avg_y - (b1 * avg_x)
 
-        # --- Correlación ---
         r_num = (n * sum_xy) - (sum_x * sum_y)
         r_den = math.sqrt(((n * sum_x2) - (sum_x ** 2)) * ((n * sum_y2) - (sum_y ** 2)))
         r = r_num / r_den
         r2 = r ** 2
 
-        # --- Predicción ---
         yk = b0 + (b1 * xk)
 
-        # --- Significancia ---
         dof = n - 2
         x_sig = abs(r) * math.sqrt(n - 2) / math.sqrt(1 - r2)
 
-        # Usar Simpson con muchos segmentos para máxima precisión
         p_sig = self.simpson_preciso.integrar(x_sig, dof, 10000)
         tail_area = 1 - (2 * p_sig)
 
-        # --- Intervalo de predicción al 70% ---
         t_valor = self.inversa.buscar_x(0.35, dof)
 
-        # Calcular sigma
         suma_errores = 0
         actual = self.lista.cabeza
         while actual:
@@ -86,14 +79,12 @@ class CalculadoraRegresionCompleta:
             actual = actual.siguiente
         sigma = math.sqrt(suma_errores / (n - 2))
 
-        # Calcular sum(xi - avg_x)²
         suma_desv_x = 0
         actual = self.lista.cabeza
         while actual:
             suma_desv_x += (actual.x - avg_x) ** 2
             actual = actual.siguiente
 
-        # Range
         rango = t_valor * sigma * math.sqrt(1 + (1 / n) + ((xk - avg_x) ** 2) / suma_desv_x)
 
         upi = yk + rango
