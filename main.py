@@ -40,11 +40,6 @@ ESPERADOS_P4 = {
 
 
 def formatear_igual(valor, referencia_str):
-    """
-    Formatea un valor calculado con la misma cantidad de decimales
-    que el valor esperado (referencia_str).
-    """
-    # Manejar notación científica
     if 'E' in referencia_str or 'e' in referencia_str:
         return f"{valor:.5E}"
     if '.' in referencia_str:
@@ -118,7 +113,7 @@ class VentanaIntegracion(QtWidgets.QWidget):
             d = int(self.txt_dof.text())
             calc = CalculadoraSimpson()
             res = calc.integrar(x, d)
-            self.lbl_resultado.setText(str(res))
+            self.lbl_resultado.setText(str(round(res, 5)))
         except:
             self.lbl_resultado.setText("ERROR")
 

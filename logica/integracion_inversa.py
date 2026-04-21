@@ -1,10 +1,8 @@
-import math
 from logica.integracion import CalculadoraSimpson
-
 
 class CalculadoraInversa:
 
-    def __init__(self, error_aceptable=0.00001):
+    def __init__(self, error_aceptable=1e-9):
         self.E = error_aceptable
         self.simpson = CalculadoraSimpson(error_aceptable / 10)
 
@@ -13,17 +11,18 @@ class CalculadoraInversa:
         d = 0.5
 
         resultado = self.simpson.integrar(x, dof)
-        error_anterior = p - resultado
+        error_actual = p - resultado
+        signo_anterior = 1 if error_actual > 0 else -1
 
-        max_iter = 50000
+        max_iter = 100000
         for _ in range(max_iter):
-            error_actual = p - resultado
-
             if abs(error_actual) < self.E:
-                return round(x, 5) if self.E >= 0.00001 else x
+                return round(x, 5)
 
-            if error_actual * error_anterior < 0:
+            signo_actual = 1 if error_actual > 0 else -1
+            if signo_actual != signo_anterior:
                 d /= 2
+                signo_anterior = signo_actual
 
             if error_actual > 0:
                 x += d
@@ -34,6 +33,6 @@ class CalculadoraInversa:
                 x = d / 2
 
             resultado = self.simpson.integrar(x, dof)
-            error_anterior = error_actual
+            error_actual = p - resultado
 
-        return round(x, 5) if self.E >= 0.00001 else x
+        return round(x, 5)
