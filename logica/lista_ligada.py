@@ -21,8 +21,6 @@ class ListaLigada:
         self.tamano += 1
 
     def obtener_sumatorias(self):
-        # Recorremos la lista una sola vez para obtener todos los totales
-        # Esto es mucho más eficiente en POO
         sum_x = 0
         sum_y = 0
         sum_x2 = 0

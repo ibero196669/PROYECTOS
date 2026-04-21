@@ -7,7 +7,6 @@ class CalculadoraInversa:
         self.simpson = CalculadoraSimpson(1e-14)
 
     def buscar_x(self, p, dof, redondear=True):
-        # Fase 1: encontrar rango [lo, hi]
         lo = 0.0
         hi = 1.0
         while self.simpson.integrar(hi, dof) < p:
